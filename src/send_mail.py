@@ -1,4 +1,5 @@
 import smtplib
+import os
 from email.mime import multipart, text, application
 from config.config import config
 from static.phrases import phrases
@@ -23,10 +24,10 @@ def get_message(email, file, cfg):
 
 
 def login_and_send(email, msg, cfg):
-    s = smtplib.SMTP(cfg["host"], cfg["port"])
+    s = smtplib.SMTP(os.environ[cfg["host"]], int(os.environ[cfg["port"]]))
     s.starttls()
-    s.login(cfg["login"], cfg["password"])
-    s.sendmail(cfg["login"], [email], msg.as_string())
+    s.login(os.environ[cfg["login"]], os.environ[cfg["password"]])
+    s.sendmail(os.environ[cfg["login"]], [email], msg.as_string())
     s.quit()
 
 

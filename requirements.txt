@@ -1,7 +1,6 @@
-dialog_bot_sdk
-cairosvg
+dialog_bot_sdk==2.2.3
+cairosvg==2.4.2
 secure-smtplib
-dialog-api==0.0.55
-grpcio
-grpcio-tools
-mock
+dialog-api==0.0.50
+grpcio==1.24.1
+grpcio-tools==1.24.1

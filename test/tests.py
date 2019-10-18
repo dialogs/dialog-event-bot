@@ -69,7 +69,7 @@ class MyTestCase(unittest.TestCase):
         msg = get_message("mail", file1, config["email_config"])
         self.assertEqual(msg._headers, [('Content-Type', 'multipart/mixed'), ('MIME-Version', '1.0'),
                                         ('Subject', 'dialog: ваша визитная карточка'),
-                                        ('From', ''), ('To', 'mail')])
+                                        ('From', 'MAIL_LOGIN'), ('To', 'mail')])
 
     def test_send_mail_off(self):
         config["email_config"]["to_mail"] = False
@@ -91,9 +91,9 @@ class MyTestCase(unittest.TestCase):
         config["email_config"]["to_chat"] = True
         cfg = config["bot_config"]
         bot = DialogBot.get_secure_bot(
-            cfg["endpoint"],
+            os.environ[cfg["endpoint"]],
             grpc.ssl_channel_credentials(),
-            cfg["token"]
+            os.environ[cfg["token"]]
         )
         with patch('dialog_bot_sdk.messaging.Messaging.send_file') as perm_mock:
             perm_mock.return_value = 1
