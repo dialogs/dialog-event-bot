@@ -4,9 +4,11 @@ ENV LIBRARY_PATH=/lib:/usr/lib
 
 WORKDIR "/tmp"
 
+COPY truetype/ /usr/share/fonts/truetype/suisse/
+
 COPY . /tmp
 
-RUN python3 -m pip install -r requirements.txt
+RUN fc-cache -fv && python3 -m pip install -r requirements.txt
 
 EXPOSE 8080
 

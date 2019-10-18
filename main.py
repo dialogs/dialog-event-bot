@@ -55,9 +55,6 @@ def on_msg(*params):
                 bot.messaging.send_message(peer, next_msg)
 
 
-def process_file(infile, outfile, new_username):
-    pass
-
 def on_click(*params):
     uid = params[0].uid
     peer = bot.users.get_user_peer_by_id(uid)

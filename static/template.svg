@@ -4,11 +4,11 @@
 	 viewBox="0 0 255.12 141.73" style="enable-background:new 0 0 255.12 141.73;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#706DAE;}
-	.st1{font-family:'SuisseIntl-Bold';}
+	.st1{font-family:'Suisse Intl'; font-weight: bold;}
 	.st2{font-size:17.0309px;}
 	.st3{fill:#0D0E0F;}
 	.st4{font-size:10px;}
-	.st5{font-family:'SuisseIntl-Medium';}
+	.st5{font-family:'Suisse Intl Medium';}
 	.st6{font-size:8px;}
 </style>
 <text transform="matrix(1 0 0 1 25.0625 28.7121)"><tspan x="0" y="0" class="st0 st1 st2">Name</tspan><tspan x="0" y="20.44" class="st0 st1 st2">Surname</tspan></text>
